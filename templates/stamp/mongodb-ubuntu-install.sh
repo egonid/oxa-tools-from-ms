@@ -146,7 +146,7 @@ install_mongodb()
     then
     curl -LO https://www.mongodb.org/static/pgp/server-3.2.asc
     gpg --import server-3.2.asc
-    echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+    echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
         
     else
         apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
