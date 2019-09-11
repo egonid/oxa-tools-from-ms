@@ -136,10 +136,10 @@ install_mongodb()
 {
     log "Downloading MongoDB package $PACKAGE_NAME from $PACKAGE_URL"
       #wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
-	 log "몽고 DB Key 값"
+	 #log "몽고 DB Key 값"
 	 
-	  sudo curl -LO https://www.mongodb.org/static/pgp/server-3.2.asc
-      sudo gpg --import server-3.2.asc
+	  #sudo curl -LO https://www.mongodb.org/static/pgp/server-3.2.asc
+      #sudo gpg --import server-3.2.asc
 	  
 	  
     # Configure mongodb.list file with the correct location
@@ -148,6 +148,9 @@ install_mongodb()
 	#   wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
     #   apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 614d985504a2163b
 	
+	 sudo rm /etc/apt/sources.list.d/mongodb*.list
+	   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+	   
      echo "deb ${PACKAGE_URL} "$(lsb_release -sc)"/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
      #echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 	 
