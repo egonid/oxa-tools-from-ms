@@ -198,6 +198,9 @@ install-gettext()
 
 install-mongodb-shell()
 {
+
+    wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
+	
     if type mongo >/dev/null 2>&1; then
         log "MongoDB Shell is already installed"
     else
@@ -207,7 +210,7 @@ install-mongodb-shell()
         SHORT_RELEASE_NUMBER=`lsb_release -sr`
         SHORT_CODENAME=`lsb_release -sc`
 		
-		 wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
+		 
 		 
 
        if (( $(echo "$SHORT_RELEASE_NUMBER > 16" | bc -l) ))
