@@ -209,9 +209,10 @@ install-mongodb-shell()
 
        if (( $(echo "$SHORT_RELEASE_NUMBER > 16" | bc -l) ))
        then
-          apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 614d985504a2163b
-         echo "deb ${PACKAGE_URL} "${SHORT_CODENAME}"/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-	    
+         wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -       
+#		apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 614d985504a2163b
+       #echo "deb ${PACKAGE_URL} "${SHORT_CODENAME}"/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+	    echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 	#if (( $(echo "$OS_VER > 16" | bc -l) ))
      #   then
       #     curl -LO https://www.mongodb.org/static/pgp/server-3.2.asc
