@@ -213,10 +213,12 @@ install-mongodb-shell()
     #curl -LO https://www.mongodb.org/static/pgp/server-3.2.asc
     #gpg --import server-3.2.asc
 			
-			
-			apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+	 wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
+	 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+	 
+	#		apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
             #echo "deb ${PACKAGE_URL} "${SHORT_CODENAME}"/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-			echo "deb $ http://repo.mongodb.org/apt/debian/dists/jessie/mongodb-org/3.2/main/binary-amd64/mongodb-org-mongos_3.2.18_amd64.deb" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+	#		echo "deb $ http://repo.mongodb.org/apt/debian/dists/jessie/mongodb-org/3.2/main/binary-amd64/mongodb-org-mongos_3.2.18_amd64.deb" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 			
         else
             apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10

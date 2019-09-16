@@ -142,17 +142,22 @@ install_mongodb()
         
     #curl -LO https://www.mongodb.org/static/pgp/server-3.2.asc
     #gpg --import server-3.2.asc
- 
-		sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+     
+	 wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
+	 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+	 
+	 	 
+	 #   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
         #echo "deb ${PACKAGE_URL} "$(lsb_release -sc)"/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
-		echo "deb $ http://repo.mongodb.org/apt/debian/dists/jessie/mongodb-org/3.2/main/binary-amd64/mongodb-org-mongos_3.2.18_amd64.deb" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+		# echo "deb $ http://repo.mongodb.org/apt/debian/dists/jessie/mongodb-org/3.2/main/binary-amd64/mongodb-org-mongos_3.2.18_amd64.deb" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
     else
         apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
         echo "deb ${PACKAGE_URL} "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.0.list
     fi
 
     # Install updates
-    apt-get -y -qq update
+    #apt-get -y -qq update
+	sudo apt-get update
 
     # Remove any previously created configuration file to avoid a prompt
     if [ -f /etc/mongod.conf ]; then
@@ -161,7 +166,8 @@ install_mongodb()
     
     #Install Mongo DB
     log "Installing MongoDB package $PACKAGE_NAME"
-    apt-get -y -qq install $PACKAGE_NAME
+    #apt-get -y -qq install $PACKAGE_NAME
+	sudo apt-get install -y mongodb-org
     
     # Stop Mongod as it may be auto-started during the above step (which is not desirable)
     stop_mongodb
