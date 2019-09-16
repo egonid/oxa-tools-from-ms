@@ -145,7 +145,7 @@ install_mongodb()
      
 	 log "Del Key EA3129277"
 	 
-	 sudo apt-key del EA3129277
+	 sudo apt-key del EA312927
 	 wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
 	 echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 	 
