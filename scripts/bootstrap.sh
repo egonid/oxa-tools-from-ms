@@ -14,8 +14,8 @@ TARGET_FILE=""
 
 # Oxa Tools
 # Settings for the OXA-Tools public repository 
-OXA_TOOLS_PUBLIC_GITHUB_ACCOUNTNAME="Microsoft"
-OXA_TOOLS_PUBLIC_GITHUB_PROJECTNAME="oxa-tools"
+OXA_TOOLS_PUBLIC_GITHUB_ACCOUNTNAME="egonid"
+OXA_TOOLS_PUBLIC_GITHUB_PROJECTNAME="oxa-tools-from-ms"
 OXA_TOOLS_PUBLIC_GITHUB_PROJECTBRANCH="oxa/master.fic"
 
 # this is the operational branch for the OXA_TOOLS public git project
