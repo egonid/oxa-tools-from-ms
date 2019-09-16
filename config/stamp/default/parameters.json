@@ -15,20 +15,20 @@
             "value": "Standard_D1_v2"
         },
         "mongoVmSize": {
-            "value": "Standard_D2_v2"
+            "value": "Standard_D1_v2"
         },
         "mysqlVmSize": {
-            "value": "Standard_D2_v2"
+            "value": "Standard_D1_v2"
         },
         "frontendVmSize": {
-            "value": "Standard_D2_v2"
+            "value": "Standard_D1_v2"
         },
         "adminUsername": {
             "value": "lexoxaadmin"
         },
         "adminPublicKey": {
-            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjmj4SSxJVgxo9u4jfMKuU53RCD0Z5hy5jhVjNF6PMAqmQrjRxMHFJzUVVzmQnx+dJhlFfYs/aYgytd0ERTgFQBDehw452KXvvO6/0X/TIAVXompZ3F2n96de/X24Tq/uj6l5dzhbSQStEYy1NXYCXOEe0Kn/IuwBBcJl6g4xxFUT+vxxac7Uocl6PvwX4m5bfC9YLRBBWZ6/Mu83+pxd63UTG13auL6hfNIdv7SfsrQaKdP2FD365BaWI67tEmIR++IA0eBkebcYXf3gj3hZZ6o9ivza/fRgWGW7XQJiFmA4es/Y5LpPzWWorB3c7oqaGBUzv2bRTaptVB7a6pzN/sOXPDzbm74Jznq+VmfASEVuas9w0yIQNiaR0ZTK3Th4Z11WUwIS8YRxJvg8DRfIuNzmJWVbPybhDlvIdrL0Gn9ykDA1eRotK2faiyFZ3Ocjot+018RvSUjMm94Lf6Wo4RM6z6wZp5YYun8AtrPLaAzU9MMWix09IA1aAcyXgdIPDj+Bykj/mEpJKJSfcteYNOG17fFSmM4+uFKGeFugT3PR9bhQThcK5oxRRSboSbILCsQS1jSw2dG0QllleORCstPVzxlHSFAxL0yTj6YX9EDOyLi2PRAWBJS+nc5ZUDroET5cBiFqOuUOY6ErK9CVlSabvMR346dBIOxg7epO2Cw== egoni@ego-gram"
-        },
+           "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjmj4SSxJVgxo9u4jfMKuU53RCD0Z5hy5jhVjNF6PMAqmQrjRxMHFJzUVVzmQnx+dJhlFfYs/aYgytd0ERTgFQBDehw452KXvvO6/0X/TIAVXompZ3F2n96de/X24Tq/uj6l5dzhbSQStEYy1NXYCXOEe0Kn/IuwBBcJl6g4xxFUT+vxxac7Uocl6PvwX4m5bfC9YLRBBWZ6/Mu83+pxd63UTG13auL6hfNIdv7SfsrQaKdP2FD365BaWI67tEmIR++IA0eBkebcYXf3gj3hZZ6o9ivza/fRgWGW7XQJiFmA4es/Y5LpPzWWorB3c7oqaGBUzv2bRTaptVB7a6pzN/sOXPDzbm74Jznq+VmfASEVuas9w0yIQNiaR0ZTK3Th4Z11WUwIS8YRxJvg8DRfIuNzmJWVbPybhDlvIdrL0Gn9ykDA1eRotK2faiyFZ3Ocjot+018RvSUjMm94Lf6Wo4RM6z6wZp5YYun8AtrPLaAzU9MMWix09IA1aAcyXgdIPDj+Bykj/mEpJKJSfcteYNOG17fFSmM4+uFKGeFugT3PR9bhQThcK5oxRRSboSbILCsQS1jSw2dG0QllleORCstPVzxlHSFAxL0yTj6YX9EDOyLi2PRAWBJS+nc5ZUDroET5cBiFqOuUOY6ErK9CVlSabvMR346dBIOxg7epO2Cw== egoni@ego-gram"
+		},
         "mongoServerAdminUserName": {
             "value": "oxamongoadmin"
         },
@@ -75,10 +75,10 @@
             "value": 1
         },
         "oxaToolsGithubAccountName": {
-            "value": "egonid"
+            "value": "Microsoft"
         },
         "oxaToolsGithubProjectName": {
-            "value": "oxa-tools-from-ms"
+            "value": "oxa-tools"
         },
         "oxaToolsGithubBranch": {
             "value": "oxa/master.fic"
@@ -102,13 +102,13 @@
             "value": "oxa/master.fic"
         },
         "edxThemeGithubAccountName": {
-            "value": "microsoft"
+            "value": "egonid"
         },
         "edxThemeGithubProjectName": {
-            "value": "edx-theme"
+            "value": "deploy-theme"
         },
         "edxThemeGithubBranch": {
-            "value": "oxa/master.fic"
+            "value": "master"
         },
         "ansibleGithubAccountName": {
             "value": "edx"
@@ -239,13 +239,13 @@
             "value": false
         },
         "enableComprehensiveTheming": {
-            "value": false
+            "value": true
         },
         "comprehensiveThemingDirectory": {
-            "value": ""
+            "value": "/edx/app/edxapp/themes"
         },
         "comprehensiveThemingName": {
-            "value": ""
+            "value": "my-khu"
         },
         "enableThirdPartyAuth": {
             "value": false
@@ -254,7 +254,7 @@
             "value": ""
         },
         "baseDomain": {
-            "value": "{CLUSTERNAME}-tm.trafficmanager.net"
+            "value": ""
         },
         "domainSeparator": {
             "value": "-"

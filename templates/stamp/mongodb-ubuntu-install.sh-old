@@ -139,15 +139,26 @@ install_mongodb()
     # Configure mongodb.list file with the correct location
     if (( $(echo "$OS_VER > 16" | bc -l) ))
     then
-        apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+        #wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
+		log "Egonid Modified XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+		wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
+		apt-key list
+		apt-key del EA312927
+		rm /etc/apt/sources.list.d/mongodb*.list
+		
+		apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
+        #apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EA312927
+		#apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0xd68fa50fea312927
         echo "deb ${PACKAGE_URL} "$(lsb_release -sc)"/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
     else
         apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+		#apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 7F0CEB10
         echo "deb ${PACKAGE_URL} "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.0.list
     fi
 
     # Install updates
     apt-get -y -qq update
+	 #apt-get update
 
     # Remove any previously created configuration file to avoid a prompt
     if [ -f /etc/mongod.conf ]; then
