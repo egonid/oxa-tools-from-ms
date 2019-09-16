@@ -145,9 +145,9 @@ install_mongodb()
      
 	 log "Del Key EA3129277"
 	 
-	sudo apt-key del EA312927
-	wget -qO - https://www.mongodb.org/static/pgp/server-3.2.asc | sudo apt-key add -
-	echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
+	#sudo apt-key del EA312927
+	wget -qO - https://www.mongodb.org/static/pgp/server-3.4.asc | sudo apt-key add -
+	echo "deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
 	 
 	 	 
 	 #   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
@@ -159,8 +159,8 @@ install_mongodb()
     fi
 
     # Install updates
-    #apt-get -y -qq update
-	sudo apt-get -y update --allow-unauthenticated
+    apt-get -y -qq update
+	#sudo apt-get -y update --allow-unauthenticated
 
     # Remove any previously created configuration file to avoid a prompt
     if [ -f /etc/mongod.conf ]; then
@@ -169,8 +169,8 @@ install_mongodb()
     
     #Install Mongo DB
     log "Installing MongoDB package $PACKAGE_NAME"
-    #apt-get -y -qq install $PACKAGE_NAME
-	sudo apt-get install -y --allow-unauthenticated mongodb-org
+    apt-get -y -qq install $PACKAGE_NAME
+	#sudo apt-get install -y --allow-unauthenticated mongodb-org
     
     # Stop Mongod as it may be auto-started during the above step (which is not desirable)
     stop_mongodb
