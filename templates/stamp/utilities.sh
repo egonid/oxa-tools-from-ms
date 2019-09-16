@@ -210,10 +210,8 @@ install-mongodb-shell()
         if (( $(echo "$SHORT_RELEASE_NUMBER > 16" | bc -l) ))
         then
             
-		sudo apt-key list | \
-        grep "expired: " | \
-        sed -ne 's|pub .*/\([^ ]*\) .*|\1|gp' | \
-        xargs -n1 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys
+    curl -LO https://www.mongodb.org/static/pgp/server-3.2.asc
+    gpg --import server-3.2.asc
 			
 			
 			apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927

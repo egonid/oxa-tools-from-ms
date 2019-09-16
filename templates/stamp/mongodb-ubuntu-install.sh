@@ -140,10 +140,8 @@ install_mongodb()
     if (( $(echo "$OS_VER > 16" | bc -l) ))
     then
         
-		sudo apt-key list | \
-        grep "expired: " | \
-        sed -ne 's|pub .*/\([^ ]*\) .*|\1|gp' | \
-        xargs -n1 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys
+    curl -LO https://www.mongodb.org/static/pgp/server-3.2.asc
+    gpg --import server-3.2.asc
  
 		sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927
         echo "deb ${PACKAGE_URL} "$(lsb_release -sc)"/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list
